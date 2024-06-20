@@ -96,6 +96,8 @@ tests/test_A: src/libcore_lib.a
 tests/test_A: lib/libgtest.a
 tests/test_A: lib/libgtest_main.a
 tests/test_A: lib/libgmock.a
+tests/test_A: lib/libgmock_main.a
+tests/test_A: lib/libgmock.a
 tests/test_A: lib/libgtest.a
 tests/test_A: tests/CMakeFiles/test_A.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jamalay/Dzhamalay/zachet/20.06.24/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_A"

@@ -4,6 +4,7 @@
 #include "A.h"
 
 using ::testing::Return;
+using ::testing::_;
 
 TEST(ATest, SingletonInstance) {
     A* instance1 = A::getInstance();
@@ -20,8 +21,23 @@ TEST(ATest, MockExample) {
     EXPECT_EQ(mockA.someMethod(10), 20);
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    ::testing::InitGoogleMock(&argc, argv);
-    return RUN_ALL_TESTS();
+TEST(ATest, ConstructorCallsSomeMethod) {
+    testing::NiceMock<MockA> tempMockA;
+    
+    ON_CALL(tempMockA, someMethod(_))
+        .WillByDefault(Return(0));
+    
+    EXPECT_CALL(tempMockA, someMethod(42))
+        .Times(1)
+        .WillOnce(Return(84));
+    
+    MockA mockA;  
+    testing::Mock::VerifyAndClearExpectations(&tempMockA);
+}
+
+
+
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+   return RUN_ALL_TESTS();
 }

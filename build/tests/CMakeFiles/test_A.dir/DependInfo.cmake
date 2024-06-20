@@ -17,6 +17,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/jamalay/Dzhamalay/zachet/20.06.24/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "/home/jamalay/Dzhamalay/zachet/20.06.24/build/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   "/home/jamalay/Dzhamalay/zachet/20.06.24/build/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "/home/jamalay/Dzhamalay/zachet/20.06.24/build/_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -218,10 +218,11 @@ src/CMakeFiles/MyProject.dir/clean:
 # Target rules for target tests/CMakeFiles/test_A.dir
 
 # All Build rule for target.
+tests/CMakeFiles/test_A.dir/all: src/CMakeFiles/core_lib.dir/all
 tests/CMakeFiles/test_A.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
+tests/CMakeFiles/test_A.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 tests/CMakeFiles/test_A.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 tests/CMakeFiles/test_A.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-tests/CMakeFiles/test_A.dir/all: src/CMakeFiles/core_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_A.dir/build.make tests/CMakeFiles/test_A.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_A.dir/build.make tests/CMakeFiles/test_A.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamalay/Dzhamalay/zachet/20.06.24/build/CMakeFiles --progress-num=13,14 "Built target test_A"
@@ -229,7 +230,7 @@ tests/CMakeFiles/test_A.dir/all: src/CMakeFiles/core_lib.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/test_A.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamalay/Dzhamalay/zachet/20.06.24/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamalay/Dzhamalay/zachet/20.06.24/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_A.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamalay/Dzhamalay/zachet/20.06.24/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/test_A.dir/rule

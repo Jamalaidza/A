@@ -6,8 +6,11 @@
 
 class MockA : public A {
 public:
-    MockA() {}
+    MockA() {
+        this->someMethod(42);
+    }
+
     MOCK_METHOD(int, someMethod, (int value), (const, override));
 };
 
-#endif
+#endif // MOCKA_H
