@@ -5,7 +5,7 @@ class A {
 public:
     static A* getInstance();
 
-    virtual int someMethod(int value) const; // Пример виртуального метода
+    virtual int someMethod(int value) const;
 private:
 
     static A* instance;
