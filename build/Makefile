@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/jamalay/Dzhamalay/zachet/20.06.24/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -162,32 +172,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named core_lib
-
-# Build rule for target.
-core_lib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_lib
-.PHONY : core_lib
-
-# fast build rule for target.
-core_lib/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/core_lib.dir/build.make src/CMakeFiles/core_lib.dir/build
-.PHONY : core_lib/fast
-
-#=============================================================================
-# Target rules for targets named MyProject
-
-# Build rule for target.
-MyProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyProject
-.PHONY : MyProject
-
-# fast build rule for target.
-MyProject/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MyProject.dir/build.make src/CMakeFiles/MyProject.dir/build
-.PHONY : MyProject/fast
-
-#=============================================================================
 # Target rules for targets named test_A
 
 # Build rule for target.
@@ -197,7 +181,7 @@ test_A: cmake_check_build_system
 
 # fast build rule for target.
 test_A/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_A.dir/build.make tests/CMakeFiles/test_A.dir/build
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_A.dir/build.make CMakeFiles/test_A.dir/build
 .PHONY : test_A/fast
 
 #=============================================================================
@@ -252,6 +236,80 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+#=============================================================================
+# Target rules for targets named core_lib
+
+# Build rule for target.
+core_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_lib
+.PHONY : core_lib
+
+# fast build rule for target.
+core_lib/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/core_lib.dir/build.make src/CMakeFiles/core_lib.dir/build
+.PHONY : core_lib/fast
+
+#=============================================================================
+# Target rules for targets named MyProject
+
+# Build rule for target.
+MyProject: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyProject
+.PHONY : MyProject
+
+# fast build rule for target.
+MyProject/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MyProject.dir/build.make src/CMakeFiles/MyProject.dir/build
+.PHONY : MyProject/fast
+
+tests/MockA.o: tests/MockA.cpp.o
+.PHONY : tests/MockA.o
+
+# target to build an object file
+tests/MockA.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_A.dir/build.make CMakeFiles/test_A.dir/tests/MockA.cpp.o
+.PHONY : tests/MockA.cpp.o
+
+tests/MockA.i: tests/MockA.cpp.i
+.PHONY : tests/MockA.i
+
+# target to preprocess a source file
+tests/MockA.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_A.dir/build.make CMakeFiles/test_A.dir/tests/MockA.cpp.i
+.PHONY : tests/MockA.cpp.i
+
+tests/MockA.s: tests/MockA.cpp.s
+.PHONY : tests/MockA.s
+
+# target to generate assembly for a file
+tests/MockA.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_A.dir/build.make CMakeFiles/test_A.dir/tests/MockA.cpp.s
+.PHONY : tests/MockA.cpp.s
+
+tests/test_A.o: tests/test_A.cpp.o
+.PHONY : tests/test_A.o
+
+# target to build an object file
+tests/test_A.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_A.dir/build.make CMakeFiles/test_A.dir/tests/test_A.cpp.o
+.PHONY : tests/test_A.cpp.o
+
+tests/test_A.i: tests/test_A.cpp.i
+.PHONY : tests/test_A.i
+
+# target to preprocess a source file
+tests/test_A.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_A.dir/build.make CMakeFiles/test_A.dir/tests/test_A.cpp.i
+.PHONY : tests/test_A.cpp.i
+
+tests/test_A.s: tests/test_A.cpp.s
+.PHONY : tests/test_A.s
+
+# target to generate assembly for a file
+tests/test_A.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_A.dir/build.make CMakeFiles/test_A.dir/tests/test_A.cpp.s
+.PHONY : tests/test_A.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -264,6 +322,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... MyProject"
 	@echo "... core_lib"
 	@echo "... gmock"
@@ -271,6 +330,12 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... test_A"
+	@echo "... tests/MockA.o"
+	@echo "... tests/MockA.i"
+	@echo "... tests/MockA.s"
+	@echo "... tests/test_A.o"
+	@echo "... tests/test_A.i"
+	@echo "... tests/test_A.s"
 .PHONY : help
 
 

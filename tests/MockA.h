@@ -1,16 +1,18 @@
 #ifndef MOCKA_H
 #define MOCKA_H
-
-#include <gmock/gmock.h>
 #include "A.h"
-
-class MockA : public A {
+#include <gmock/gmock.h>
+class MockA 
+{
 public:
-    MockA() {
-        this->someMethod(42);
-    }
+    struct Helpers {
+        static MockA* getInstanceStatic();
+        static void AConstructorStatic();
+        static int someMethodConstStatic(const MockA& mock, int value);
+    };
 
-    MOCK_METHOD(int, someMethod, (int value), (const, override));
+    MOCK_METHOD0(getInstanceStatic, MockA*()); // Теперь объявление в рамках структуры
+    MOCK_METHOD0(AConstructor, void());
+    MOCK_CONST_METHOD1(someMethodConstStatic, int(int));
 };
-
-#endif // MOCKA_H
+#endif

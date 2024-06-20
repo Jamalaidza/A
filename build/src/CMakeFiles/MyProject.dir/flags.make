@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/jamalay/Dzhamalay/zachet/20.06.24/src -I/home/jamalay/Dzhamalay/zachet/20.06.24
 
-CXX_FLAGS = -std=gnu++11
+CXX_FLAGS = 
 

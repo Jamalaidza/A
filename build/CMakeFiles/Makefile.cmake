@@ -21,7 +21,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/googletest-src/googletest/cmake/gtest_main.pc.in"
   "_deps/googletest-src/googletest/cmake/internal_utils.cmake"
   "../src/CMakeLists.txt"
-  "../tests/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
@@ -66,10 +65,8 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/googletest-subbuild/CMakeLists.txt"
-  "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/googletest-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/googletest-build/googletest/generated/gmock.pc"
   "_deps/googletest-build/googletest/generated/gmock_main.pc"
@@ -79,15 +76,16 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/googletest-build/googletest/generated/gtest.pc"
   "_deps/googletest-build/googletest/generated/gtest_main.pc"
   "_deps/googletest-build/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "src/CMakeFiles/core_lib.dir/DependInfo.cmake"
-  "src/CMakeFiles/MyProject.dir/DependInfo.cmake"
-  "tests/CMakeFiles/test_A.dir/DependInfo.cmake"
+  "CMakeFiles/test_A.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "src/CMakeFiles/core_lib.dir/DependInfo.cmake"
+  "src/CMakeFiles/MyProject.dir/DependInfo.cmake"
   )
