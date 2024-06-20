@@ -1,0 +1,29 @@
+name: someProject
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        cxx: [gcc-9]  # замените на нужную вам версию компилятора
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up GTest
+      run: sudo apt-get install libgtest-dev
+
+    - name: Configure
+      run: cmake -Bbuild -S.
+
+    - name: Build
+      run: cmake --build build
+
+    - name: Run tests
+      run: ./build/tests/test_A  # замените на исполняемый файл вашего теста
