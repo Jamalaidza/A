@@ -6,6 +6,7 @@
 
 class MockA : public A {
 public:
+    MockA() {}
     MOCK_METHOD(int, someMethod, (int value), (const, override));
 };
 
