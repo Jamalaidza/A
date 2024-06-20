@@ -1,4 +1,4 @@
-name: someProject
+name: MyProject
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        cxx: [gcc-9]  # замените на нужную вам версию компилятора
+        cxx: [gcc-9]
 
     steps:
     - uses: actions/checkout@v2
@@ -26,4 +26,4 @@ jobs:
       run: cmake --build build
 
     - name: Run tests
-      run: ./build/tests/test_A  # замените на исполняемый файл вашего теста
+      run: ./build/tests/test_A
