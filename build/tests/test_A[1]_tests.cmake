@@ -1,0 +1,5 @@
+add_test( ATest.SingletonInstance /home/jamalay/Dzhamalay/zachet/20.06.24/build/tests/test_A [==[--gtest_filter=ATest.SingletonInstance]==] --gtest_also_run_disabled_tests)
+set_tests_properties( ATest.SingletonInstance PROPERTIES WORKING_DIRECTORY /home/jamalay/Dzhamalay/zachet/20.06.24/build/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test( ATest.MockExample /home/jamalay/Dzhamalay/zachet/20.06.24/build/tests/test_A [==[--gtest_filter=ATest.MockExample]==] --gtest_also_run_disabled_tests)
+set_tests_properties( ATest.MockExample PROPERTIES WORKING_DIRECTORY /home/jamalay/Dzhamalay/zachet/20.06.24/build/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set( test_A_TESTS ATest.SingletonInstance ATest.MockExample)
