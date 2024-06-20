@@ -1,29 +1,36 @@
-name: MyProject
+name: CI Workflow for MyProject
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        cxx: [gcc-9]
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    - name: Set up GTest
-      run: sudo apt-get install libgtest-dev
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake build-essential
 
-    - name: Configure
-      run: cmake -Bbuild -S.
+    - name: Create build directory
+      run: mkdir -p build
+
+    - name: Configure CMake
+      run: |
+        cd build
+        cmake ..
 
     - name: Build
       run: cmake --build build
 
     - name: Run tests
-      run: ./build/tests/test_A
+      run: cd build && ctest --output-on-failure
