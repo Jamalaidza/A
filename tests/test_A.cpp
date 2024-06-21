@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "MockA.h"
+#include "A.h"
 
 using ::testing::Return;
 
@@ -16,6 +16,7 @@ TEST(MockATest, TestAConstructorAndMethod) {
 }
 */
 
+/*
 TEST(MockATest, TestAConstructorAndMethod) {
     std::unique_ptr<MockA> instance(MockA::Helpers::getInstanceStatic()); 
 
@@ -25,6 +26,15 @@ TEST(MockATest, TestAConstructorAndMethod) {
     instance->AConstructor();
     int result = instance->someMethodConstStatic(5);
     ASSERT_EQ(result, 10);
+}
+*/
+
+//new
+TEST(A_TEST, f_test)
+{
+	A a;
+	int result = a.someMethod(10);
+	EXPECT_EQ(result, 20);
 }
 
 int main(int argc, char **argv) {

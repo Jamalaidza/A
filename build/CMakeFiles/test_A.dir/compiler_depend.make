@@ -764,7 +764,6 @@ CMakeFiles/test_A.dir/tests/test_A.cpp.o: ../tests/test_A.cpp \
   _deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-generated-actions.h \
   _deps/googletest-src/googlemock/include/gmock/gmock-more-matchers.h \
   _deps/googletest-src/googlemock/include/gmock/gmock-nice-strict.h \
-  ../tests/MockA.h \
   ../src/A.h
 
 

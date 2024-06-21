@@ -315,5 +315,4 @@ CMakeFiles/test_A.dir/tests/test_A.cpp.o: \
  /home/jamalay/Dzhamalay/zachet/20.06.24/build/_deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-generated-actions.h \
  /home/jamalay/Dzhamalay/zachet/20.06.24/build/_deps/googletest-src/googlemock/include/gmock/gmock-more-matchers.h \
  /home/jamalay/Dzhamalay/zachet/20.06.24/build/_deps/googletest-src/googlemock/include/gmock/gmock-nice-strict.h \
- /home/jamalay/Dzhamalay/zachet/20.06.24/tests/MockA.h \
  /home/jamalay/Dzhamalay/zachet/20.06.24/src/A.h
