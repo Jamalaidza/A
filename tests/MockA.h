@@ -11,7 +11,7 @@ public:
         static int someMethodConstStatic(const MockA& mock, int value);
     };
 
-    MOCK_METHOD0(getInstanceStatic, MockA*()); // Теперь объявление в рамках структуры
+    MOCK_METHOD0(getInstanceStatic, MockA*());
     MOCK_METHOD0(AConstructor, void());
     MOCK_CONST_METHOD1(someMethodConstStatic, int(int));
 };
